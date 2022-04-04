@@ -13,6 +13,7 @@ lines = spark \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "ec2-18-211-252-152.compute-1.amazonaws.com:9092") \
     .option("subscribe", "transactions-topic-verified") \
+     .option("startingOffsets", "earliest")\
     .load()
 
 kafkaDF = lines.selectExpr("cast(key as string)", "cast(value as string)")
