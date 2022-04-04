@@ -11,7 +11,7 @@ spark.sparkContext.setLogLevel('ERROR')
 lines = spark \
     .readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "ec2-54-237-150-57.compute-1.amazonaws.com:9092") \
+    .option("kafka.bootstrap.servers", "ec2-18-211-252-152.compute-1.amazonaws.com:9092") \
     .option("subscribe", "transactions-topic-verified") \
     .load()
 
